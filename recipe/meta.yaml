@@ -1,17 +1,25 @@
 {% set name = "mpifx" %}
-{% set version = "20.1" %}
+{% set version = "1.0" %}
+{% set build = 0 %}
+{% set mpi = mpi or "nompi" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/dftbplus/{{ name }}/archive/a9a55b8a265ef1a3873e98579e654c5af95d0e6a.tar.gz
-  sha256: b2cf21fa464a3a55f268f816dbad02b47a54bda5e7a769045e447dbd7fc205cb
+  url: https://github.com/dftbplus/{{ name }}/archive/{{ version }}.tar.gz
+  sha256: 0e1d7a915d6195a8ca38676bfd92a6a0c8d8dedea2cfca5821b598279daf6736
 
 build:
-  number: 1
+  number: {{ build }}
   skip: True  # [win]
+
+  {% set mpi_prefix = "mpi_" + mpi %}
+  string: {{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}
+
+  run_exports:
+    - {{ name }} * {{ mpi_prefix }}_*
 
 requirements:
   build:
@@ -26,7 +34,10 @@ requirements:
     - {{ mpi }}
 
 test:
+  requires:
+    - pkg-config
   commands:
+    - pkg-config {{ name }} --exact-version {{ version }}
     - test -f $PREFIX/lib/libmpifx.dylib  # [osx]
     - test -f $PREFIX/lib/libmpifx.so  # [linux]
 
