@@ -37,6 +37,7 @@ test:
   requires:
     - pkg-config
   commands:
+    - pkg-config {{ name }} --modversion
     - pkg-config {{ name }} --exact-version {{ version }}
     - test -f $PREFIX/lib/libmpifx.dylib  # [osx]
     - test -f $PREFIX/lib/libmpifx.so  # [linux]
