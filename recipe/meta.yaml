@@ -1,5 +1,5 @@
 {% set name = "mpifx" %}
-{% set version = "1.1" %}
+{% set version = "1.2" %}
 {% set build = 0 %}
 {% set mpi = mpi or "nompi" %}
 
@@ -8,8 +8,10 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/dftbplus/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 315892117996003e52c75a89a9fb7d46d4beb2db6fc0aee417355cadd6d9a025
+  #url: https://github.com/dftbplus/{{ name }}/archive/{{ version }}.tar.gz
+  #sha256: 315892117996003e52c75a89a9fb7d46d4beb2db6fc0aee417355cadd6d9a025
+  url: https://github.com/dftbplus/aradi/refs/heads/stage-1.2.tar.gz
+  sha256: be5c808d865ff822732014554c2245602dc38d88b1a33cc08de81e7d62342a09
 
 build:
   number: {{ build }}
