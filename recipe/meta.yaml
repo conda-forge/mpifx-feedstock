@@ -37,9 +37,8 @@ test:
   requires:
     - pkg-config
   commands:
-    - pkg-config {{ name }} --exact-version {{ version }}
-    - test -f $PREFIX/lib/libmpifx.dylib  # [osx]
-    - test -f $PREFIX/lib/libmpifx.so  # [linux]
+    - pkg-config {{ name }} --modversion
+    - test -f $PREFIX/lib/libmpifx${SHLIB_EXT}
 
 about:
   home: https://github.com/dftbplus/{{ name }}
