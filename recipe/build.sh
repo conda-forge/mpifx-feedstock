@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -ex
 
+if [ "${mpi}" == "openmpi" ]; then
+   export OPAL_PREFIX=$PREFIX
+   export OMPI_MCA_plm=isolated
+   export OMPI_MCA_btl_vader_single_copy_mechanism=none
+   export OMPI_MCA_rmaps_base_oversubscribe=yes
+fi
+
 cmake_options=(
    "-DCMAKE_INSTALL_PREFIX=${PREFIX}"
    "-DCMAKE_INSTALL_LIBDIR=lib"
