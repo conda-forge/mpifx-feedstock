@@ -8,6 +8,8 @@ if [ "${mpi}" == "openmpi" ]; then
    export OMPI_MCA_rmaps_base_oversubscribe=yes
 fi
 
+export FFLAGS="$FFLAGS -fallow-argument-mismatch"
+
 cmake_options=(
    "-DCMAKE_INSTALL_PREFIX=${PREFIX}"
    "-DCMAKE_INSTALL_LIBDIR=lib"
