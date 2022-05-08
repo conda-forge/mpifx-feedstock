@@ -10,8 +10,6 @@ package:
 source:
   url: https://github.com/dftbplus/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 75d5b8a1d29f7caa7abf396420289ddb908540d1d57c238d3939062a5e0cd227
-  patches:
-    - mpifx42.patch
 
 build:
   number: {{ build }}
