@@ -21,7 +21,7 @@ build:
   string: {{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}
 
   run_exports:
-    - {{ name }} * {{ mpi_prefix }}_*
+    - {{ pin_subpackage(name, max_pin='x.x') }} {{ mpi_prefix }}_*
 
 requirements:
   build:
