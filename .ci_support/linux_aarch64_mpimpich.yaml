@@ -13,11 +13,11 @@ docker_image:
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '10'
+- '12'
 mpi:
 - mpich
 mpich:
-- '4'
+- '3'
 openmpi:
 - '4'
 target_platform:
