@@ -1,5 +1,3 @@
 mpi:
   - mpich
   - openmpi
-mpich:
-  - '3'
