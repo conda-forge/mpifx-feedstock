@@ -8,10 +8,8 @@ package:
   version: {{ version }}
 
 source:
-  # url: https://github.com/dftbplus/{{ name }}/archive/{{ version }}.tar.gz
-  # sha256: 63fd09680fabd18b5a2486fb2bf3c96b13ae73466ebb297ba7c594c97f69bcf9
-  url: https://github.com/aradi/mpifx/archive/refs/heads/stage-1.5.zip
-  sha256: 70d183485c28644cae54f8af3d2c7754ceb98b886880e1894fb4576dc7573579
+  url: https://github.com/dftbplus/{{ name }}/archive/{{ version }}.tar.gz
+  sha256: 3801cbd6134b30f403b59346b40ff5bfb47ebe125892cf483e78b477c20b1b02
 
 build:
   number: {{ build }}
