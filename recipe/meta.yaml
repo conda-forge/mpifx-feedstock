@@ -9,8 +9,8 @@ package:
 
 source:
   #url: https://github.com/dftbplus/{{ name }}/archive/{{ version }}.tar.gz
-  url: https://github.com/aradi/mpifx/archive/refs/heads/release-1.6.zip
-  sha256: 49135895f690c1b6f0b75429f308d38192021e8879180346c815eafbbc15355c
+  url: https://github.com/aradi/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 5ec9bcb7b4d943109dddda2bec7ae29b82b9d5653566543ee451e75c76c8c3e1
 
 build:
   number: {{ build }}
